@@ -16,7 +16,9 @@ public class Calculator {
     public double division(int a, int b) {
         return a / b;
     }
-
+    public int multiplication(int a, int b) {
+        return a * b;
+    }
     public void timeout(int time){
         try {
             Thread.sleep(time);
