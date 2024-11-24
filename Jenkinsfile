@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'mvn01' // Usa la configuración de Maven que añadiste
+    }
+
     stages {
         stage('Build') {
             steps {
@@ -21,8 +25,7 @@ pipeline {
 
     post {
         always {
-            // Limpia el workspace después de la ejecución
-            cleanWs()
+            cleanWs() // Limpia el workspace después de cada ejecución
         }
         failure {
             echo 'Build failed!'
